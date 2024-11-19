@@ -19,9 +19,11 @@ public class Task4 {
             System.err.println("Помилка запису у файл: " + e.getMessage());
         }
         try (RandomAccessFile raf = new RandomAccessFile(path, "rw")) {
-            for (int i = 1; i < byteArr.length; i += 2) {
+            for (int i = 0; i < byteArr.length; i += 2) {
                 raf.seek(i);
-                raf.writeByte(-1);
+                int tmp = raf.read();
+                raf.seek(i);
+                raf.writeByte(-tmp);
             }
             System.out.println("Значення байтів із парними індексами змінено.");
         } catch (IOException e) {

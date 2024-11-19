@@ -9,7 +9,7 @@ public class Task5 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Введіть ім'я архіву (з розширенням .zip): ");
         String archiveName = reader.readLine();
-        String zipPath = System.getProperty("user.dir") + "/src/Task5/" + archiveName ;
+        String zipPath = System.getProperty("user.dir") + "/src/Task56/" + archiveName ;
         ZipOutputStream zout = new ZipOutputStream( new FileOutputStream(zipPath)); // ZipOutputStream відповідає за додавання файлів у ZIP-архів, стиснення та структурування архіву. FileOutputStream записує байти у файл
         PrintWriter out = new PrintWriter(zout); // PrintWriter - обгортка для потоків, яка дозволяє записувати текстові дані у вказаний потік
         while (true) {
